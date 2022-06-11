@@ -1,31 +1,94 @@
 :root {
   --blue: rgb(19, 16, 36);
   --white: rgb(236, 236, 236);
+  --btn-bg: #570a57;
+  --text-clr: #333;
+  --btn-text-clr: #fff;
+  --btn-background-clr: #0b5ed7;
 }
-body {
-  background: var(--background-color);
-  color: var(--text-color);
-  font-weight: var(--font-weight);
-  transition: background 0.3s ease-in-out, color 0.6s ease-in-out;
-  -webkit-transition: background 0.3s ease-in-out, color 0.6s ease-in-out;
-  -moz-transition: background 0.3s ease-in-out, color 0.6s ease-in-out;
-  -ms-transition: background 0.3s ease-in-out, color 0.6s ease-in-out;
-  -o-transition: background 0.3s ease-in-out, color 0.6s ease-in-out;
+body,
+.btn {
+  background: var(--background-color) !important;
+  color: var(--text-color) !important;
+  font-weight: var(--font-weight) !important;
+  border: var(--border-btn) !important;
+
+  transition: background 0.3s ease-in-out, color 0.6s ease-in-out !important;
+  -webkit-transition: background 0.3s ease-in-out, color 0.6s ease-in-out !important;
+  -moz-transition: background 0.3s ease-in-out, color 0.6s ease-in-out !important;
+  -ms-transition: background 0.3s ease-in-out, color 0.6s ease-in-out !important;
+  -o-transition: background 0.3s ease-in-out, color 0.6s ease-in-out !important;
+}
+.btn {
+  color: var(--btn-text-clr) !important;
+  background: var(--btn-bg-clr) !important;
 }
 
-body.light {
-  --background-color: var(--white);
-  --text-color: var(--blue);
-  --font-weight: 400;
+body.light,
+.btn.light {
+  --background-color: var(--white) !important;
+  --text-color: var(--text-clr) !important;
+  --font-weight: 400 !important;
+  --border-btn: none !important;
+  --btn-text-clr: var(--white) !important;
+  --btn-bg-clr: var(--btn-background-clr) !important;
 }
 
-body.dark {
-  --background-color: var(--blue);
-  --text-color: var(--white);
-  --font-weight: 500;
+body.dark,
+.btn.dark {
+  --background-color: var(--blue) !important;
+  --text-color: var(--text-clr) !important;
+  --font-weight: 500 !important;
+  --btn-text-clr: var(--white) !important;
+  --btn-bg-clr: #2e0249 !important;
 }
+
+/* .btn {
+  background: var(--btn-background-color) !important;
+}
+
+.btn.dark {
+  --btn-background-color: var(--btn-bg) !important;
+}
+.btn.light {
+  --btn-background-color: var(--blue) !important;
+} */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+/* 
+.dark-theme {
+  --main-heading: #5f99be;
+  --para-clr: #fff;
+  --btn-bg-clr: #5f99be;
+  --btn-text-clr: #fff;
+  --bg-clr: #111b20;
+}
+
+.light-theme {
+  --main-heading: #5f99be;
+  --para-clr: #333;
+  --btn-bg-clr: #111b20;
+  --btn-text-clr: #fff;
+  --bg-clr: #fff;
+}
+h1 {
+  font-size: 5rem;
+  color: var(--main-heading);
+}
+p {
+  font-size: 2rem;
+  color: var(--para-clr);
+}
+
+.btn {
+  background-color: var(--btn-bg-clr) !important;
+  color: var(--btn-text-clr);
+}
+
+body {
+  background-color: var(--bg-clr) !important;
+} */

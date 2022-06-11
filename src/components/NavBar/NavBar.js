@@ -1,12 +1,24 @@
 import { signOut } from "firebase/auth";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
 import DarkMode from "../../DarkMode/DarkMode";
 import auth from "../../Firebase/Firebase.init";
+import { MdLightMode } from "react-icons/md";
 
 const NavBar = () => {
+  // const [theme, setTheme] = useState("light-theme");
+  // useEffect(() => {
+  //   document.body.className = theme;
+  // }, [theme]);
+  // const toogleTheme = () => {
+  //   if (theme === "dark-theme") {
+  //     setTheme("light-theme");
+  //   } else {
+  //     setTheme("dark-theme");
+  //   }
+  // };
   const [user] = useAuthState(auth);
   return (
     <div>
@@ -49,6 +61,12 @@ const NavBar = () => {
               ) : (
                 user
               )}
+
+              <DarkMode></DarkMode>
+
+              {/* <Link to onClick={() => toogleTheme()}>
+                <MdLightMode className="text-white"></MdLightMode>
+              </Link> */}
             </Nav>
           </Navbar.Collapse>
         </Container>

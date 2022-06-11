@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
+import { BiShow, BiHide } from "react-icons/bi";
 
 import {
   useAuthState,
@@ -12,6 +13,7 @@ import SocialLogin from "../SocialLogin/SocialLogin";
 import "./Login.css";
 
 const Login = () => {
+  const [showPass, setShowPass] = useState(false);
   const [user] = useAuthState(auth);
   let navigate = useNavigate();
   let location = useLocation();
@@ -72,7 +74,7 @@ const Login = () => {
         <img src={authentication} alt="" className="w-100" />
       </div>
       <Form
-        className="w-50 container form  h-50 mt-2 p-5"
+        className="w-50 container form  h-50 mt-5 p-5"
         onSubmit={handleFormSubmit}
       >
         <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -91,11 +93,26 @@ const Login = () => {
 
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label>Password</Form.Label>
-          <Form.Control
-            type="password"
-            placeholder="Password"
-            onChange={handlePasswordChange}
-          />
+
+          <div className="parent-hide-show">
+            <Form.Control
+              type={showPass ? "text" : "password"}
+              placeholder="Password"
+              onChange={handlePasswordChange}
+            />
+            {showPass ? (
+              <BiHide
+                className="position-hide-show"
+                onClick={() => setShowPass(!showPass)}
+              ></BiHide>
+            ) : (
+              <BiShow
+                className="position-hide-show"
+                onClick={() => setShowPass(!showPass)}
+              ></BiShow>
+            )}
+          </div>
+
           {errors?.passwordError && (
             <Form.Text className="error-message">
               {errors?.passwordError}
@@ -106,7 +123,7 @@ const Login = () => {
         <Button
           type="submit"
           variant="primary"
-          className="submit-login-btn w-100"
+          className="submit-login-btn w-100 btn "
         >
           login
         </Button>

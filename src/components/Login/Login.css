@@ -19,7 +19,7 @@
   position: absolute;
   top: 30%;
   left: 90%;
-  color: rgb(13, 110, 253);
+
   cursor: pointer;
 }
 
@@ -35,7 +35,7 @@
   }
   .form {
     margin-top: 1rem;
-    min-width: 90vw;
-    min-height: 70vh;
+    min-width: 100vw;
+    min-height: 100%;
   }
 }

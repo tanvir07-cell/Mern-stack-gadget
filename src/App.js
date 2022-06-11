@@ -10,7 +10,7 @@ import UploadProducts from "./components/UploadProducts/UploadProducts";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App light">
       <NavBar></NavBar>
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
