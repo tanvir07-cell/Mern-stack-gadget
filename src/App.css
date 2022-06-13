@@ -5,6 +5,7 @@
   --text-clr: #333;
   --btn-text-clr: #fff;
   --btn-background-clr: #0b5ed7;
+  
 }
 body,
 .btn {
@@ -19,28 +20,36 @@ body,
   -ms-transition: background 0.3s ease-in-out, color 0.6s ease-in-out !important;
   -o-transition: background 0.3s ease-in-out, color 0.6s ease-in-out !important;
 }
+
 .btn {
   color: var(--btn-text-clr) !important;
   background: var(--btn-bg-clr) !important;
 }
 
+h1,h2,h3,h4,h5,h6{
+  color:var(--heading-clr)!important;
+}
+
 body.light,
-.btn.light {
+.btn.light,h1.light,h2.light,h3.light,h4.light,h5.light,h6.light {
   --background-color: var(--white) !important;
   --text-color: var(--text-clr) !important;
   --font-weight: 400 !important;
   --border-btn: none !important;
   --btn-text-clr: var(--white) !important;
   --btn-bg-clr: var(--btn-background-clr) !important;
+  --heading-clr: var(--text-clr) !important;
+   
 }
 
 body.dark,
-.btn.dark {
+.btn.dark,h1.dark,h2.dark,h3.dark,h4.dark,h5.dark,h6.dark{
   --background-color: var(--blue) !important;
   --text-color: var(--text-clr) !important;
   --font-weight: 500 !important;
   --btn-text-clr: var(--white) !important;
   --btn-bg-clr: #2e0249 !important;
+  --heading-clr:var(--white)  !important;
 }
 
 /* .btn {
